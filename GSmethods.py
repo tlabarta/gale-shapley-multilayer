@@ -1,6 +1,39 @@
 import random
+import numpy as np
 
-def generatePreferences(n, party, layer):
+
+def generateFeatures(n, party, layer):
+    features = {}
+
+    for i in range(n):
+        randomlist = []
+        if layer == 1:
+            if party == "driver":
+                randomlist = random.choices(range(0, n), k=n) # --> Change to range between 5 to 100€
+            elif party == "passenger":
+                randomlist = random.choices(np.linspace(0,1.0,11),k=n)
+        elif layer == 2:
+            if party == "driver":
+                randomlist = str(random.randint(0, 2))
+                randomlist = randomlist.replace('0', 'f').replace('1', 'm').replace('2', 'd')
+            elif party == "passenger":
+                randomlist = str(random.randint(0, 2))
+                randomlist = randomlist.replace('0', 'f').replace('1', 'm').replace('2', 'd')
+
+        features[i] = randomlist
+    return features
+
+def generatePreferences(n, party):
+    gpreferences = {}
+
+    for i in range(n):
+        randomlist = random.sample(range(0, 3), 3)
+        randomlist = [str(x) for x in randomlist]
+        randomlist = [x.replace('0', 'f').replace('1', 'm').replace('2', 'd') for x in randomlist]
+        gpreferences[i] = randomlist
+    return gpreferences
+
+def calculatePreferences(n, party, layer):
     preferences = {}
 
     for i in range(n):
@@ -27,6 +60,18 @@ def generatePreferences(n, party, layer):
             #preferences["p" + str(i)] = preferences.pop(i) -> Use to add prefix for key
 
     return preferences
+
+def calculatePreferencesNumerical(n, features):
+    features = features
+
+    for i in range(n):
+        features[i].sort(reverse=True)
+        indexlist =[]
+        for k in range(len(features[i])):
+            indexlist.append(features[i].index(k))
+        print(indexlist)
+    return features
+
 
 
 def stableMatching(n, driverPreferences, passengerPreferences):
