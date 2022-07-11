@@ -2,6 +2,9 @@ import random
 import numpy as np
 
 
+#Add additional Profit ranges to generateFeatures
+# [1, 100], [25, 75], [1, 25] --> assumption is that number of stable matchings (on both layers) inceases, if the profit range is lower
+
 def generateFeatures(n, party, layer):
     features = {}
 

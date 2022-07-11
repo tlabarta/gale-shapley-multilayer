@@ -8,7 +8,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GSmethods.py" beforeDir="false" afterPath="$PROJECT_DIR$/GSmethods.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Prototyping.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Prototyping.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,6 +81,9 @@
       <workItem from="1655912268678" duration="6000" />
       <workItem from="1655991291284" duration="7875000" />
       <workItem from="1656234784414" duration="21659000" />
+      <workItem from="1656504567440" duration="30000" />
+      <workItem from="1657451801545" duration="58000" />
+      <workItem from="1657528598766" duration="1724000" />
     </task>
     <servers />
   </component>
