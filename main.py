@@ -1,5 +1,5 @@
 import GSmethods
-from GaleShapley import MarriageModel
+from GSmethods import MarriageModel
 
 n = 5
 
@@ -11,15 +11,15 @@ def main():
     driver_g_preferences = GSmethods.generatePreferences(n, "driver")
     passenger_g_preferences = GSmethods.generatePreferences(n, "passenger")
 
-    print(profits)
-    #print(eta)
+    print("L1 Profits: " + str(profits))
+    print("L1 ETA: " + str(eta))
 
-    #print(GSmethods.calculatePreferencesNumerical(n, profits))
+    print("L2 Driver Preferences: " + str(driver_g_preferences))
+    print("L2 Driver Gender: " + str(driver_gender))
+    print("L2 Driver Preferences: " + str(passenger_g_preferences))
+    print("L2 Passenger Gender: " + str(passenger_gender))
 
-    # print(driver_g_preferences)
-    # print(passenger_gender)
-    # print(passenger_g_preferences)
-    # print(driver_gender)
+
 
     driver_l1 = GSmethods.calculatePreferences(n, "driver", 1)
     driver_l2 = GSmethods.calculatePreferences(n, "driver", 2)
@@ -28,16 +28,13 @@ def main():
 
 
 
-
-    # print(GSmethods.stableMatching(n, driver_l1, passenger_l1))
-    #
     layer1 = MarriageModel(driver_l1, passenger_l1)
     stable_match = layer1.Deferred_Acceptance()
-    print(stable_match)
+    print("Stable Matching L1: " + str(stable_match))
     layer2 = MarriageModel(driver_l2, passenger_l2)
-    print(layer2.is_stable(stable_match))
+    print("Blocking Pair on L2: " + str(layer2.is_stable(stable_match)))
     if layer2.is_stable(stable_match) != True:
         no_blocking_pairs = int(len(layer2.is_stable(stable_match)) / 2)
-        print(no_blocking_pairs)
+        print("No. blocking pair: " + str(no_blocking_pairs))
 
 main()
