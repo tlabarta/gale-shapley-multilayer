@@ -11,7 +11,7 @@ def generateFeatures(n, party, layer):
             if party == "driver":
                 randomlist = random.choices(range(0, n), k=n) # --> Change to range between 5 to 100€
             elif party == "passenger":
-                randomlist = random.choices(np.round(np.linspace(0,1.0,11)),k=n)
+                randomlist = random.choices(np.round(np.linspace(0,1.0,11),2),k=n)
         elif layer == 2:
             if party == "driver":
                 randomlist = str(random.randint(0, 2))
@@ -110,8 +110,56 @@ def stableMatching(n, driverPreferences, passengerPreferences):
     driverMatch = dict(zip(list(driverPreferences.keys()), driverMatch)) # -> change driverPreferences to DriverID if prefix wanted
     return driverMatch
 
-import numpy as np
+#Checking for blocking pairs
 
+def checkblockingpairs(matches: dict, driver_preferences: dict , passenger_preferences: dict) -> int:
+    x = matches
+    x_inv = {v: k for k, v in x.items()}
+    y = driver_preferences
+    z = passenger_preferences
+    blocking_pair_count = 0
+    blocking_pair_list = {}
+
+    for key, value in x.items():
+        match_preferences = y[key]
+        match_preference_index = match_preferences.index(value)
+
+        if match_preference_index != 0:
+            for i in range(match_preference_index-1, 0, -1):
+                higher_preference = match_preferences[i]
+                higher_preference_pref = z[higher_preference]
+                key_preference_index = higher_preference_pref.index(key)
+                higher_preference_match = x_inv[higher_preference]
+                higher_preference_match_ind = higher_preference_pref.index(higher_preference_match)
+                if key_preference_index < higher_preference_match_ind:
+                    blocking_pair_count +=1
+                    blocking_pair_list[key] = higher_preference
+
+
+    return blocking_pair_count, blocking_pair_list
+
+
+def sumprofit(matches: dict, profits: dict) -> int:
+    sum_profit = 0
+    x = matches
+    y = profits
+
+    for key, value in x.items():
+        match_profits_all = y[key]
+        match_profit = match_profits_all[value]
+        sum_profit = sum_profit + match_profit
+    return sum_profit
+
+def sumeta(matches: dict, eta: dict) -> float:
+    sum_eta = 0.0
+    x = matches
+    y = eta
+
+    for key, value in x.items():
+        match_eta_all = y[key]
+        match_eta = match_eta_all[value]
+        sum_eta = sum_eta + match_eta
+    return sum_eta
 
 class MarriageModel:
 

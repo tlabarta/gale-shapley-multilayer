@@ -1,7 +1,7 @@
 import GSmethods
 from GSmethods import MarriageModel
 
-n = 5
+n = 3
 
 def main():
     profits = GSmethods.generateFeatures(n, "driver", 1)
@@ -26,7 +26,10 @@ def main():
     passenger_l1 = GSmethods.calculatePreferences(n, "passenger", 1)
     passenger_l2 = GSmethods.calculatePreferences(n, "passenger", 2)
 
-
+    print(f'L1 Driver Preference List: {passenger_l1}')
+    print(f'L1 Passenger Preference List: {driver_l1}')
+    print(f'L2 Driver Preference List: {passenger_l2}')
+    print(f'L2 Passenger Preference List: {driver_l2}')
 
     layer1 = MarriageModel(driver_l1, passenger_l1)
     stable_match = layer1.Deferred_Acceptance()
@@ -37,4 +40,7 @@ def main():
         no_blocking_pairs = int(len(layer2.is_stable(stable_match)) / 2)
         print("No. blocking pair: " + str(no_blocking_pairs))
 
+    print(GSmethods.checkblockingpairs(stable_match,driver_l2, passenger_l2))
+    print(GSmethods.sumprofit(stable_match, profits))
+    print(GSmethods.sumeta(stable_match, eta))
 main()
