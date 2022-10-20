@@ -118,14 +118,14 @@ def checkblockingpairs(matches: dict, driver_preferences: dict , passenger_prefe
     y = driver_preferences
     z = passenger_preferences
     blocking_pair_count = 0
-    blocking_pair_list = {}
+    blocking_pair_list = []
 
     for key, value in x.items():
         match_preferences = y[key]
         match_preference_index = match_preferences.index(value)
 
         if match_preference_index != 0:
-            for i in range(match_preference_index-1, 0, -1):
+            for i in range(match_preference_index-1, -1, -1):
                 higher_preference = match_preferences[i]
                 higher_preference_pref = z[higher_preference]
                 key_preference_index = higher_preference_pref.index(key)
@@ -133,7 +133,7 @@ def checkblockingpairs(matches: dict, driver_preferences: dict , passenger_prefe
                 higher_preference_match_ind = higher_preference_pref.index(higher_preference_match)
                 if key_preference_index < higher_preference_match_ind:
                     blocking_pair_count +=1
-                    blocking_pair_list[key] = higher_preference
+                    blocking_pair_list.append([key, higher_preference])
 
 
     return blocking_pair_count, blocking_pair_list
@@ -159,7 +159,7 @@ def sumeta(matches: dict, eta: dict) -> float:
         match_eta_all = y[key]
         match_eta = match_eta_all[value]
         sum_eta = sum_eta + match_eta
-    return sum_eta
+    return round(sum_eta,2)
 
 class MarriageModel:
 
