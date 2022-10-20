@@ -1,30 +1,38 @@
 import GSmethods
 from GSmethods import MarriageModel
 
-n = 3
+n = 4
 
 def main():
-    profits = GSmethods.generateFeatures(n, "driver", 1)
-    eta = GSmethods.generateFeatures(n, "passenger", 1)
-    driver_gender = GSmethods.generateFeatures(n, "driver", 2)
-    passenger_gender = GSmethods.generateFeatures(n, "driver", 2)
-    driver_g_preferences = GSmethods.generatePreferences(n, "driver")
-    passenger_g_preferences = GSmethods.generatePreferences(n, "passenger")
+    # profits = GSmethods.generateFeatures(n, "driver", 1)
+    # eta = GSmethods.generateFeatures(n, "passenger", 1)
+    # driver_gender = GSmethods.generateFeatures(n, "driver", 2)
+    # passenger_gender = GSmethods.generateFeatures(n, "driver", 2)
+    # driver_g_preferences = GSmethods.generatePreferences(n, "driver")
+    # passenger_g_preferences = GSmethods.generatePreferences(n, "passenger")
+
+    profits = {0: [2, 0, 0, 1], 1: [2, 0, 3, 3], 2: [1, 3, 2, 0], 3: [1, 2, 3, 1]}
+    eta = {0: [0.8, 0.1, 0.5, 0.8], 1: [0.9, 0.9, 0.9, 0.9], 2: [0.1, 0.0, 1.0, 0.5], 3: [0.8, 1.0, 0.3, 0.2]}
 
     print("L1 Profits: " + str(profits))
     print("L1 ETA: " + str(eta))
 
-    print("L2 Driver Preferences: " + str(driver_g_preferences))
-    print("L2 Driver Gender: " + str(driver_gender))
-    print("L2 Driver Preferences: " + str(passenger_g_preferences))
-    print("L2 Passenger Gender: " + str(passenger_gender))
+    # print("L2 Driver Preferences: " + str(driver_g_preferences))
+    # print("L2 Driver Gender: " + str(driver_gender))
+    # print("L2 Driver Preferences: " + str(passenger_g_preferences))
+    # print("L2 Passenger Gender: " + str(passenger_gender))
 
 
 
-    driver_l1 = GSmethods.calculatePreferences(n, "driver", 1)
-    driver_l2 = GSmethods.calculatePreferences(n, "driver", 2)
-    passenger_l1 = GSmethods.calculatePreferences(n, "passenger", 1)
-    passenger_l2 = GSmethods.calculatePreferences(n, "passenger", 2)
+    # driver_l1 = GSmethods.calculatePreferences(n, "driver", 1)
+    # driver_l2 = GSmethods.calculatePreferences(n, "driver", 2)
+    # passenger_l1 = GSmethods.calculatePreferences(n, "passenger", 1)
+    # passenger_l2 = GSmethods.calculatePreferences(n, "passenger", 2)
+
+    driver_l1 ={0: [3, 2, 1, 0], 1: [1, 0, 2, 3], 2: [0, 1, 2, 3], 3: [2, 1, 3, 0]}
+    driver_l2 = {0: [3, 2, 1, 0], 1: [0, 3, 2, 1], 2: [0, 3, 2, 1], 3: [1, 3, 2, 0]}
+    passenger_l1 = {0: [0, 3, 1, 2], 1: [2, 1, 0, 3], 2: [3, 1, 2, 0], 3: [1, 0, 3, 2]}
+    passenger_l2 = {0: [2, 1, 0, 3], 1: [2, 1, 0, 3], 2: [3, 1, 0, 2], 3: [2, 3, 0, 1]}
 
     print(f'L1 Driver Preference List: {passenger_l1}')
     print(f'L1 Passenger Preference List: {driver_l1}')
