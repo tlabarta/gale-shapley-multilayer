@@ -161,6 +161,10 @@ def sumeta(matches: dict, eta: dict) -> float:
         sum_eta = sum_eta + match_eta
     return round(sum_eta,2)
 
+def alg1(blocking_pair_count, blocking_pair_list, sum_profit, sum_eta):
+    output = pandas.DataFrame('ALG1', blocking_pair_count, blocking_pair_list, sum_profit, sum_eta)
+    return output
+
 class MarriageModel:
 
     def __init__(self, proposers, receivers):
