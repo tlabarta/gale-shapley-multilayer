@@ -112,7 +112,7 @@ def stableMatching(n, driverPreferences, passengerPreferences):
 
 #Checking for blocking pairs
 
-def checkblockingpairs(matches: dict, driver_preferences: dict , passenger_preferences: dict) -> int:
+def checkblockingpairs(matches: dict, driver_preferences: dict , passenger_preferences: dict):
     x = matches
     x_inv = {v: k for k, v in x.items()}
     y = driver_preferences
@@ -135,8 +135,8 @@ def checkblockingpairs(matches: dict, driver_preferences: dict , passenger_prefe
                     blocking_pair_count +=1
                     blocking_pair_list.append([key, higher_preference])
 
-
-    return blocking_pair_count, blocking_pair_list
+    #print(blocking_pair_list)
+    return blocking_pair_count
 
 
 def sumprofit(matches: dict, profits: dict) -> int:
@@ -161,9 +161,7 @@ def sumeta(matches: dict, eta: dict) -> float:
         sum_eta = sum_eta + match_eta
     return round(sum_eta,2)
 
-def alg1(blocking_pair_count, blocking_pair_list, sum_profit, sum_eta):
-    output = pandas.DataFrame('ALG1', blocking_pair_count, blocking_pair_list, sum_profit, sum_eta)
-    return output
+
 
 class MarriageModel:
 
