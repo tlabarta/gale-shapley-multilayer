@@ -5,7 +5,7 @@ from GSmethods import MarriageModel
 
 def run(n):
 
-    results = pd.DataFrame()
+    results = []
 
     profits = GSmethods.generateFeatures(n, "driver", 1)
     eta = GSmethods.generateFeatures(n, "passenger", 1)
@@ -29,3 +29,5 @@ def run(n):
 
     alg2 = ['ALG2', GSmethods.checkblockingpairs(stable_match_l2,driver_l1, passenger_l1), GSmethods.sumprofit(stable_match_l2, profits), GSmethods.sumeta(stable_match_l2, eta)]
     results.append(alg2)
+
+    return results

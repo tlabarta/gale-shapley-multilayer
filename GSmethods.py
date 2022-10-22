@@ -110,7 +110,6 @@ def stableMatching(n, driverPreferences, passengerPreferences):
     driverMatch = dict(zip(list(driverPreferences.keys()), driverMatch)) # -> change driverPreferences to DriverID if prefix wanted
     return driverMatch
 
-#Checking for blocking pairs
 
 def checkblockingpairs(matches: dict, driver_preferences: dict , passenger_preferences: dict):
     x = matches
