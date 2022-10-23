@@ -2,6 +2,8 @@ import random
 import numpy as np
 
 
+
+
 def generateFeatures(n, party, layer):
     features = {}
 
@@ -33,46 +35,49 @@ def generatePreferences(n, party):
         gpreferences[i] = randomlist
     return gpreferences
 
-def calculatePreferences(n, party, layer):
-    preferences = {}
-
-    for i in range(n):
-        randomlist = []
-        if layer == 1:
-            if party == "driver":
-                randomlist = random.sample(range(0, n), n)
-                #randomlist = ["p" + str(val) for val in randomlist] -> Use to add prefix for value
-            elif party == "passenger":
-                randomlist = random.sample(range(0, n), n)
-                #randomlist = ["d" + str(val) for val in randomlist] -> Use to add prefix for value
-        elif layer == 2:
-            if party == "driver":
-                randomlist = random.sample(range(0, n), n)
-                #randomlist = ["p" + str(val) for val in randomlist] -> Use to add prefix for value
-            elif party == "passenger":
-                randomlist = random.sample(range(0, n), n)
-                #randomlist = ["d" + str(val) for val in randomlist] -> Use to add prefix for value
-        if party == "driver":
-            preferences[i] = randomlist
-            #preferences["d" + str(i)] = preferences.pop(i) -> Use to add prefix for key
-        elif party == "passenger":
-            preferences[i] = randomlist
-            #preferences["p" + str(i)] = preferences.pop(i) -> Use to add prefix for key
-
-    return preferences
-
-def calculatePreferencesNumerical(n, features):
+def calculatePreferences(preferences, features):
+    preferences = preferences
     features = features
+    preference_list = []
+    result = {}
 
-    for i in range(n):
-        features[i].sort(reverse=True)
+    for i in preferences:
+        preference_list = []
+        preference = preferences[i]
+        for k in preference:
+            for key,value in features.items():
+                if k == value:
+                    preference_list.append(key)
+        result[i]=preference_list
+
+
+
+    return result
+
+
+def calculatePreferencesNumerical(features, category):
+
+    initial = features
+    x = len(features)
+    results = {}
+
+    for i in range(x):
+
+        if category == 'Profit':
+            sorted_features = sorted(initial[i], reverse=True)
+        elif category == 'ETA':
+            sorted_features = sorted(initial[i])
+
         indexlist =[]
-        for k in range(len(features[i])):
-            indexlist.append(features[i].index(k))
-        print(indexlist)
-    return features
 
+        for k in sorted_features:
+            if initial[i].index(k) not in indexlist:
+                indexlist.append(initial[i].index(k))
+            else:
+                indexlist.append(initial[i].index(k, indexlist[-1]+1))
 
+        results[i] = indexlist
+    return results
 
 def stableMatching(n, driverPreferences, passengerPreferences):
     unmatched = list(driverPreferences.keys())
@@ -110,6 +115,11 @@ def stableMatching(n, driverPreferences, passengerPreferences):
     driverMatch = dict(zip(list(driverPreferences.keys()), driverMatch)) # -> change driverPreferences to DriverID if prefix wanted
     return driverMatch
 
+
+def rearrange_order(preference_list, n):
+    new_order = random.sample(range(0,n),n)
+    rearranged_dict = {k: preference_list[k] for k in new_order}
+    return rearranged_dict
 
 def checkblockingpairs(matches: dict, driver_preferences: dict , passenger_preferences: dict):
     x = matches
@@ -159,7 +169,6 @@ def sumeta(matches: dict, eta: dict) -> float:
         match_eta = match_eta_all[value]
         sum_eta = sum_eta + match_eta
     return round(sum_eta,2)
-
 
 
 class MarriageModel:

@@ -1,6 +1,7 @@
 import pandas as pd
 import GSmethods
 from GSmethods import MarriageModel
+import random
 
 
 def run(n):
@@ -14,10 +15,24 @@ def run(n):
     driver_g_preferences = GSmethods.generatePreferences(n, "driver")
     passenger_g_preferences = GSmethods.generatePreferences(n, "passenger")
 
-    driver_l1 = GSmethods.calculatePreferences(n, "driver", 1)
-    driver_l2 = GSmethods.calculatePreferences(n, "driver", 2)
-    passenger_l1 = GSmethods.calculatePreferences(n, "passenger", 1)
-    passenger_l2 = GSmethods.calculatePreferences(n, "passenger", 2)
+
+    driver_l1 = GSmethods.calculatePreferencesNumerical(profits, 'Profit')
+    driver_l2 = GSmethods.calculatePreferences(driver_g_preferences, passenger_gender)
+    passenger_l1 = GSmethods.calculatePreferencesNumerical(profits, 'ETA')
+    passenger_l2 = GSmethods.calculatePreferences(passenger_g_preferences, driver_gender)
+
+    #Done:
+    #1. Random Feature Generation
+    #2. Generating Preferences based on the random features
+    #3. Find stable matchings for given preference list (0:... to n:...)
+    #4. Calculate blocking pairs on other layer
+    #5. Summarize and visualize results
+    #6. Loop to run for n passengers/drivers and i iterations
+    #7. Shuffle dictionary order randomly
+
+    #To-DO:
+    #Implement shuffling in stable matching runs.
+
 
     layer1 = MarriageModel(driver_l1, passenger_l1)
     stable_match_l1 = layer1.Deferred_Acceptance()

@@ -21,7 +21,17 @@ def main():
     df_results = pd.DataFrame(results, columns=['ALG', 'Blocking Pairs', 'Profit', 'ETA'])
     print(df_results)
 
-    visual.boxplot(df_results, 'Blocking Pairs', n_index, iter_index)
+    #Visualize
+    visual.boxplot(df_results, 'Blocking Pairs', config.n[n_index], config.iterations[iter_index])
+    visual.boxplot(df_results, 'Profit', config.n[n_index], config.iterations[iter_index])
+    visual.boxplot(df_results, 'ETA', config.n[n_index], config.iterations[iter_index])
+
+    visual.barchart_1dimension(df_results, 'Blocking Pairs', config.n[n_index], config.iterations[iter_index])
+    visual.barchart_1dimension(df_results, 'Profit', config.n[n_index], config.iterations[iter_index])
+    visual.barchart_1dimension(df_results, 'ETA', config.n[n_index], config.iterations[iter_index])
+
+    visual.corr_matrix(df_results, config.n[n_index], config.iterations[iter_index])
+
 
 main()
 
