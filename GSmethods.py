@@ -170,6 +170,22 @@ def sumeta(matches: dict, eta: dict) -> float:
         sum_eta = sum_eta + match_eta
     return round(sum_eta,2)
 
+def minmaxresult(matches: dict, l1_features: dict, Min_Max: str):
+    x = matches
+    y = l1_features
+    match = []
+
+    for key, value in x.items():
+        match_all = y[key]
+        match.append(match_all[value])
+
+    if Min_Max == 'Min':
+        result = min(match)
+    elif Min_Max == 'Max':
+        result = max(match)
+
+    return result
+
 
 class MarriageModel:
 

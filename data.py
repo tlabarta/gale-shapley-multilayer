@@ -32,6 +32,8 @@ def run(n):
 
     #To-DO:
     #Implement shuffling in stable matching runs.
+    #Select Min and Max Profit + ETA
+
 
 
     layer1 = MarriageModel(driver_l1, passenger_l1)
@@ -39,10 +41,28 @@ def run(n):
 
     layer2 = MarriageModel(driver_l2, passenger_l2)
     stable_match_l2 = layer2.Deferred_Acceptance()
-    alg1 = ['ALG1', GSmethods.checkblockingpairs(stable_match_l1,driver_l2, passenger_l2), GSmethods.sumprofit(stable_match_l1, profits), GSmethods.sumeta(stable_match_l1, eta)]
+    alg1 = [
+        'ALG1',
+        GSmethods.checkblockingpairs(stable_match_l1,driver_l2, passenger_l2),
+        GSmethods.sumprofit(stable_match_l1, profits),
+        GSmethods.sumeta(stable_match_l1, eta),
+        GSmethods.minmaxresult(stable_match_l1, profits, 'Min'),
+        GSmethods.minmaxresult(stable_match_l1, profits, 'Max'),
+        GSmethods.minmaxresult(stable_match_l1, eta, 'Min'),
+        GSmethods.minmaxresult(stable_match_l1, eta, 'Max')
+    ]
     results.append(alg1)
 
-    alg2 = ['ALG2', GSmethods.checkblockingpairs(stable_match_l2,driver_l1, passenger_l1), GSmethods.sumprofit(stable_match_l2, profits), GSmethods.sumeta(stable_match_l2, eta)]
+    alg2 = [
+        'ALG2',
+        GSmethods.checkblockingpairs(stable_match_l2,driver_l1, passenger_l1),
+        GSmethods.sumprofit(stable_match_l2, profits),
+        GSmethods.sumeta(stable_match_l2, eta),
+        GSmethods.minmaxresult(stable_match_l2, profits, 'Min'),
+        GSmethods.minmaxresult(stable_match_l2, profits, 'Max'),
+        GSmethods.minmaxresult(stable_match_l2, eta, 'Min'),
+        GSmethods.minmaxresult(stable_match_l2, eta, 'Max')
+    ]
     results.append(alg2)
 
     return results
