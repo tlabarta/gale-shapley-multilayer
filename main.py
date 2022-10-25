@@ -16,6 +16,8 @@ def main():
         inter_results = data.run(config.n[n_index])
         results.append(inter_results[0])
         results.append(inter_results[1])
+        results.append(inter_results[2])
+        results.append(inter_results[3])
         inter_results.clear()
 
     #8 Algorithms:
@@ -27,6 +29,7 @@ def main():
 
     df_results = pd.DataFrame(results, columns=[
         'ALG',
+        'Optimum',
         'Blocking Pairs',
         'Sum_Profit',
         'Sum_ETA',
