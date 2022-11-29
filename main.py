@@ -1,56 +1,124 @@
 import pandas as pd
-import data
-import visual
+
 import config
+import data
+
 
 def main():
 
     config.init()
 
-    results = []
+    results_fix = []
 
-    n_index = 0
-    iter_index = 0
+    runs = [20, 40, 60, 80, 100]
+    #runtime_test = [100, 200, 400, 600, 800, 1000, 2000, 4000, 6000, 8000, 10000]
+    #iter_index = 5
 
-    for k in range(config.iterations[iter_index]):
-        inter_results = data.run(config.n[n_index])
-        results.append(inter_results[0])
-        results.append(inter_results[1])
-        results.append(inter_results[2])
-        results.append(inter_results[3])
-        inter_results.clear()
+    # for l in runs:
+    #     for k in range(100000):
+    #         inter_results = data.run(l)
+    #         results_fix.append(inter_results[0])
+    #         results_fix.append(inter_results[1])
+    #         results_fix.append(inter_results[2])
+    #         results_fix.append(inter_results[3])
+    #         inter_results.clear()
+    #     print(l)
+    #
+    #     df_results_fix = pd.DataFrame(results_fix, columns=[
+    #         'ALG',
+    #         'Optimum',
+    #         'Blocking Pairs',
+    #         'Sum_Profit',
+    #         'Sum_ETA',
+    #         'Sum_Max_Possible_Profit',
+    #         'Min_Profit',
+    #         'Max_Profit',
+    #         'Sum_Min_Possible_ETA',
+    #         'Min_ETA',
+    #         'Max_ETA'
+    #     ])
+    #
+    #
+    #     df_results_fix.to_csv(f'./results/Fix/data/data_fix_n{l}.csv')
+    #     del df_results_fix
+    #     results_fix.clear()
 
-    #8 Algorithms:
-    # 2 sides (driver/passenger optimal) x 2 options (fixed order, shuffled order) x 2 Alg extensions (L1-first, L2-first)
-    #To-DO:
-    #Implement shuffling in stable matching runs -> 2 options
-    #Select Min and Max Profit + ETA in addition to sum
-    # Add option for passenger optimal matching
 
-    df_results = pd.DataFrame(results, columns=[
-        'ALG',
-        'Optimum',
-        'Blocking Pairs',
-        'Sum_Profit',
-        'Sum_ETA',
-        'Min_Profit',
-        'Max_Profit',
-        'Min_ETA',
-        'Max_ETA'
-    ])
+# To-Do: Reduce results to ALG1, ALG2, ALG3, ALG4
+#
+#     To-Do: Set axis for boxplots as 0.5 x max profit/ETA/Blocking pairs  x n
+#     Check n limits without iterations, record execution time
+#     n = [100, 200, 400, 600, 800, 1000, 2000, 4000, 6000, 8000, 10000]
+#     If Algs terminate in less than 1 hour, write down computation time in addition to other results
 
-    print(df_results)
+    for r in runs:
+        results_shuffle = data.shuffle_run(r, 100000)
 
-    #Visualize
-    visual.boxplot(df_results, 'Blocking Pairs', config.n[n_index], config.iterations[iter_index])
-    visual.boxplot(df_results, 'Sum_Profit', config.n[n_index], config.iterations[iter_index])
-    visual.boxplot(df_results, 'Sum_ETA', config.n[n_index], config.iterations[iter_index])
+        df_results_shuffle = pd.DataFrame(results_shuffle, columns=[
+            'ALG',
+            'Optimum',
+            'Blocking Pairs',
+            'Sum_Profit',
+            'Sum_ETA',
+            'Sum_Max_Possible_Profit',
+            'Min_Profit',
+            'Max_Profit',
+            'Sum_Min_Possible_ETA',
+            'Min_ETA',
+            'Max_ETA'
+        ])
 
-    visual.barchart_1dimension(df_results, 'Blocking Pairs', config.n[n_index], config.iterations[iter_index])
-    visual.barchart_1dimension(df_results, 'Sum_Profit', config.n[n_index], config.iterations[iter_index])
-    visual.barchart_1dimension(df_results, 'Sum_ETA', config.n[n_index], config.iterations[iter_index])
+        df_results_shuffle.to_csv(f'./results/Shuffle/data/data_shuffle_n{r}.csv')
+        print(r)
 
-    visual.corr_matrix(df_results, config.n[n_index], config.iterations[iter_index])
+
+# #Record run time all
+#     runtime = []
+#     for j in runtime_test:
+#         start_time = time.process_time()
+#         run = data.run(j)
+#         inter_results = [j, time.process_time() - start_time]
+#         runtime.append(inter_results)
+#
+#
+#
+#     df_runtime = pd.DataFrame(runtime, columns=['n=','Run Time in s'])
+#
+#     df_runtime.to_csv(f'./results/run_time.csv')
+#     del df_runtime
+
+# Record run time preferences
+
+    # runtime = []
+    # for n in runtime_test:
+    #     start_time = time.process_time()
+    #
+    #     profits = GSmethods.generateFeatures(n, "driver", 1)
+    #     eta = GSmethods.generateFeatures(n, "passenger", 1)
+    #     driver_gender = GSmethods.generateFeatures(n, "driver", 2)
+    #     passenger_gender = GSmethods.generateFeatures(n, "driver", 2)
+    #     driver_g_preferences = GSmethods.generatePreferences(n, "driver")
+    #     passenger_g_preferences = GSmethods.generatePreferences(n, "passenger")
+    #
+    #     GSmethods.calculatePreferencesNumerical(profits, 'Profit')
+    #     GSmethods.calculatePreferences(driver_g_preferences, passenger_gender)
+    #     GSmethods.calculatePreferencesNumerical(eta, 'ETA')
+    #     GSmethods.calculatePreferences(passenger_g_preferences, driver_gender)
+    #
+    #
+    #     inter_results = [n, time.process_time() - start_time]
+    #     runtime.append(inter_results)
+    #     print(n)
+    #
+    #
+    #
+    # df_runtime = pd.DataFrame(runtime, columns=['n=','Run Time in s'])
+    #
+    # df_runtime.to_csv(f'./results/run_time_preferences.csv')
+    # del df_runtime
+
+
+
 
 
 main()
