@@ -1,6 +1,7 @@
 import random
 import numpy as np
 import time
+from scipy.optimize import linear_sum_assignment
 
 
 
@@ -54,7 +55,6 @@ def calculatePreferences(preferences, features):
 
 
     return result
-
 
 def calculatePreferencesNumerical(features, category):
 
@@ -115,7 +115,6 @@ def stableMatching(n, driverPreferences, passengerPreferences):
 
     driverMatch = dict(zip(list(driverPreferences.keys()), driverMatch)) # -> change driverPreferences to DriverID if prefix wanted
     return driverMatch
-
 
 def rearrange_order(preference_list, n):
     new_order = random.sample(range(0,n),n)
@@ -187,16 +186,28 @@ def minmaxresult(matches: dict, l1_features: dict, Min_Max: str):
 
     return result
 
-def minmaxall(l1_features: dict, Min_Max: str):
-    y = l1_features
-    results = []
+#to be removed
+# def minmaxall(l1_features: dict, Min_Max: str):
+#     y = l1_features
+#     results = []
+#
+#     for key, value in y.items():
+#         if Min_Max == 'Min':
+#             results.append(min(value))
+#         elif Min_Max == 'Max':
+#             results.append(max(value))
+#
+#     sum_results = sum(results)
+#
+#     return sum_results
 
-    for key, value in y.items():
-        if Min_Max == 'Min':
-            results.append(min(value))
-        elif Min_Max == 'Max':
-            results.append(max(value))
+def minmaxweightmatching(l1_features,Min_Max):
+    y = np.array(list(l1_features.values()))
 
-    sum_results = sum(results)
+    if Min_Max == 'Min':
+        row_ind, col_ind = linear_sum_assignment(y)
+    elif Min_Max == 'Max':
+        row_ind, col_ind = linear_sum_assignment(-y)
 
-    return sum_results
+    result = y[row_ind, col_ind].sum()
+    return result
