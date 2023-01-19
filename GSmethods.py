@@ -1,6 +1,7 @@
 import random
 import numpy as np
 import time
+import pandas as pd
 from scipy.optimize import linear_sum_assignment
 
 
@@ -79,6 +80,15 @@ def calculatePreferencesNumerical(features, category):
 
         results[i] = indexlist
     return results
+
+def calculateWaitingTime(eta, waiting_time):
+    initial = pd.DataFrame(eta)
+    substr = pd.DataFrame(waiting_time)
+    result = initial - substr
+    result[result < 0] = 0
+    result = result.to_dict('list')
+
+    return result
 
 def stableMatching(n, driverPreferences, passengerPreferences):
     unmatched = list(driverPreferences.keys())
