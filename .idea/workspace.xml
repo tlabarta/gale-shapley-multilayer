@@ -5,11 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6334ea84-5fdc-47bb-a042-2242cb19fcfd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/data2.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Analysis 2.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Analysis 2.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GSmethods.py" beforeDir="false" afterPath="$PROJECT_DIR$/GSmethods.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/results/Fix/data/data_fix_n100.csv" beforeDir="false" afterPath="$PROJECT_DIR$/results/Fix/data/data_fix_n100.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/results/Fix/data/data_fix_n20.csv" beforeDir="false" afterPath="$PROJECT_DIR$/results/Fix/data/data_fix_n20.csv" afterDir="false" />
@@ -21,6 +19,7 @@
       <change beforePath="$PROJECT_DIR$/results/Shuffle/data/data_shuffle_n40.csv" beforeDir="false" afterPath="$PROJECT_DIR$/results/Shuffle/data/data_shuffle_n40.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/results/Shuffle/data/data_shuffle_n60.csv" beforeDir="false" afterPath="$PROJECT_DIR$/results/Shuffle/data/data_shuffle_n60.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/results/Shuffle/data/data_shuffle_n80.csv" beforeDir="false" afterPath="$PROJECT_DIR$/results/Shuffle/data/data_shuffle_n80.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/run_time.csv" beforeDir="false" afterPath="$PROJECT_DIR$/results/run_time.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,8 +29,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="Jupyter Notebook" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -82,9 +81,6 @@
       <module name="gale-shapley-multilayer" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
       <option name="SDK_HOME" value="$USER_HOME$/miniforge3/envs/pm/bin/python" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="false" />
@@ -141,7 +137,8 @@
       <workItem from="1670350869873" duration="6127000" />
       <workItem from="1670759845877" duration="20513000" />
       <workItem from="1673793005512" duration="3401000" />
-      <workItem from="1674139017701" duration="7135000" />
+      <workItem from="1674139017701" duration="7730000" />
+      <workItem from="1674227218073" duration="11876000" />
     </task>
     <servers />
   </component>
