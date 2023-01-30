@@ -16,7 +16,9 @@ def generateFeatures(n, party, layer):
             if party == "driver":
                 randomlist = random.choices(range(1, 100), k=n)
             elif party == "passenger":
-                randomlist = random.choices(range(1, 10),k=n)
+                randomlist = random.choices(range(1, 60),k=n)
+            elif party == "waiting time":
+                randomlist = random.choices(range(1, 30), k=n)
         elif layer == 2:
             if party == "driver":
                 randomlist = str(random.randint(0, 2))

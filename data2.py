@@ -2,7 +2,7 @@ import GSmethods
 import numpy as np
 
 
-def run(n, driver_l1, passenger_l1, driver_l2, passenger_l2, profits, eta):
+def run(n, driver_l1, passenger_l1, driver_l2, passenger_l2, profits, arrival_time):
     interm_results = []
 
     stable_match_l1_d = GSmethods.stableMatching(n, driver_l1, passenger_l1)
@@ -19,13 +19,13 @@ def run(n, driver_l1, passenger_l1, driver_l2, passenger_l2, profits, eta):
         'Driver-optimal',
         GSmethods.checkblockingpairs(stable_match_l1_d, driver_l2, passenger_l2),
         GSmethods.sumprofit(stable_match_l1_d, profits),
-        GSmethods.sumeta(stable_match_l1_d, eta),
+        GSmethods.sumeta(stable_match_l1_d, arrival_time),
         GSmethods.minmaxweightmatching(profits, 'Max'),
         GSmethods.minmaxresult(stable_match_l1_d, profits, 'Min'),
         GSmethods.minmaxresult(stable_match_l1_d, profits, 'Max'),
-        GSmethods.minmaxweightmatching(eta, 'Min'),
-        GSmethods.minmaxresult(stable_match_l1_d, eta, 'Min'),
-        GSmethods.minmaxresult(stable_match_l1_d, eta, 'Max')
+        GSmethods.minmaxweightmatching(arrival_time, 'Min'),
+        GSmethods.minmaxresult(stable_match_l1_d, arrival_time, 'Min'),
+        GSmethods.minmaxresult(stable_match_l1_d, arrival_time, 'Max')
     ]
     interm_results.append(alg1_d)
 
@@ -34,13 +34,13 @@ def run(n, driver_l1, passenger_l1, driver_l2, passenger_l2, profits, eta):
         'Driver-optimal',
         GSmethods.checkblockingpairs(stable_match_l2_d, driver_l1, passenger_l1),
         GSmethods.sumprofit(stable_match_l2_d, profits),
-        GSmethods.sumeta(stable_match_l2_d, eta),
+        GSmethods.sumeta(stable_match_l2_d, arrival_time),
         GSmethods.minmaxweightmatching(profits, 'Max'),
         GSmethods.minmaxresult(stable_match_l2_d, profits, 'Min'),
         GSmethods.minmaxresult(stable_match_l2_d, profits, 'Max'),
-        GSmethods.minmaxweightmatching(eta, 'Min'),
-        GSmethods.minmaxresult(stable_match_l2_d, eta, 'Min'),
-        GSmethods.minmaxresult(stable_match_l2_d, eta, 'Max')
+        GSmethods.minmaxweightmatching(arrival_time, 'Min'),
+        GSmethods.minmaxresult(stable_match_l2_d, arrival_time, 'Min'),
+        GSmethods.minmaxresult(stable_match_l2_d, arrival_time, 'Max')
     ]
     interm_results.append(alg2_d)
 
@@ -49,13 +49,13 @@ def run(n, driver_l1, passenger_l1, driver_l2, passenger_l2, profits, eta):
         'Passenger-optimal',
         GSmethods.checkblockingpairs(stable_match_l1_p, driver_l2, passenger_l2),
         GSmethods.sumprofit(stable_match_l1_p, profits),
-        GSmethods.sumeta(stable_match_l1_p, eta),
+        GSmethods.sumeta(stable_match_l1_p, arrival_time),
         GSmethods.minmaxweightmatching(profits, 'Max'),
         GSmethods.minmaxresult(stable_match_l1_p, profits, 'Min'),
         GSmethods.minmaxresult(stable_match_l1_p, profits, 'Max'),
-        GSmethods.minmaxweightmatching(eta, 'Min'),
-        GSmethods.minmaxresult(stable_match_l1_p, eta, 'Min'),
-        GSmethods.minmaxresult(stable_match_l1_p, eta, 'Max')
+        GSmethods.minmaxweightmatching(arrival_time, 'Min'),
+        GSmethods.minmaxresult(stable_match_l1_p, arrival_time, 'Min'),
+        GSmethods.minmaxresult(stable_match_l1_p, arrival_time, 'Max')
     ]
     interm_results.append(alg1_p)
 
@@ -64,13 +64,13 @@ def run(n, driver_l1, passenger_l1, driver_l2, passenger_l2, profits, eta):
         'Passenger-optimal',
         GSmethods.checkblockingpairs(stable_match_l2_p, driver_l1, passenger_l1),
         GSmethods.sumprofit(stable_match_l2_p, profits),
-        GSmethods.sumeta(stable_match_l2_p, eta),
+        GSmethods.sumeta(stable_match_l2_p, arrival_time),
         GSmethods.minmaxweightmatching(profits, 'Max'),
         GSmethods.minmaxresult(stable_match_l2_p, profits, 'Min'),
         GSmethods.minmaxresult(stable_match_l2_p, profits, 'Max'),
-        GSmethods.minmaxweightmatching(eta, 'Min'),
-        GSmethods.minmaxresult(stable_match_l2_p, eta, 'Min'),
-        GSmethods.minmaxresult(stable_match_l2_p, eta, 'Max')
+        GSmethods.minmaxweightmatching(arrival_time, 'Min'),
+        GSmethods.minmaxresult(stable_match_l2_p, arrival_time, 'Min'),
+        GSmethods.minmaxresult(stable_match_l2_p, arrival_time, 'Max')
     ]
     interm_results.append(alg2_p)
 
@@ -78,7 +78,7 @@ def run(n, driver_l1, passenger_l1, driver_l2, passenger_l2, profits, eta):
     return interm_results
 
 
-def shuffle_run(n, driver_l1, passenger_l1, driver_l2, passenger_l2, profits, eta):
+def shuffle_run(n, driver_l1, passenger_l1, driver_l2, passenger_l2, profits, arrivaltime):
 
     interm_shuffle_results = []
 
@@ -101,13 +101,13 @@ def shuffle_run(n, driver_l1, passenger_l1, driver_l2, passenger_l2, profits, et
         'Driver-optimal',
         GSmethods.checkblockingpairs(stable_match_l1_d_shuffle, driver_l2, passenger_l2_shuffle),
         GSmethods.sumprofit(stable_match_l1_d_shuffle, profits),
-        GSmethods.sumeta(stable_match_l1_d_shuffle, eta),
+        GSmethods.sumeta(stable_match_l1_d_shuffle, arrivaltime),
         GSmethods.minmaxweightmatching(profits, 'Max'),
         GSmethods.minmaxresult(stable_match_l1_d_shuffle, profits, 'Min'),
         GSmethods.minmaxresult(stable_match_l1_d_shuffle, profits, 'Max'),
-        GSmethods.minmaxweightmatching(eta, 'Min'),
-        GSmethods.minmaxresult(stable_match_l1_d_shuffle, eta, 'Min'),
-        GSmethods.minmaxresult(stable_match_l1_d_shuffle, eta, 'Max')
+        GSmethods.minmaxweightmatching(arrivaltime, 'Min'),
+        GSmethods.minmaxresult(stable_match_l1_d_shuffle, arrivaltime, 'Min'),
+        GSmethods.minmaxresult(stable_match_l1_d_shuffle, arrivaltime, 'Max')
     ]
     interm_shuffle_results.append(alg1_d)
 
@@ -116,13 +116,13 @@ def shuffle_run(n, driver_l1, passenger_l1, driver_l2, passenger_l2, profits, et
         'Driver-optimal',
         GSmethods.checkblockingpairs(stable_match_l2_d_shuffle, driver_l1, passenger_l1_shuffle),
         GSmethods.sumprofit(stable_match_l2_d_shuffle, profits),
-        GSmethods.sumeta(stable_match_l2_d_shuffle, eta),
+        GSmethods.sumeta(stable_match_l2_d_shuffle, arrivaltime),
         GSmethods.minmaxweightmatching(profits, 'Max'),
         GSmethods.minmaxresult(stable_match_l2_d_shuffle, profits, 'Min'),
         GSmethods.minmaxresult(stable_match_l2_d_shuffle, profits, 'Max'),
-        GSmethods.minmaxweightmatching(eta, 'Min'),
-        GSmethods.minmaxresult(stable_match_l2_d_shuffle, eta, 'Min'),
-        GSmethods.minmaxresult(stable_match_l2_d_shuffle, eta, 'Max')
+        GSmethods.minmaxweightmatching(arrivaltime, 'Min'),
+        GSmethods.minmaxresult(stable_match_l2_d_shuffle, arrivaltime, 'Min'),
+        GSmethods.minmaxresult(stable_match_l2_d_shuffle, arrivaltime, 'Max')
     ]
     interm_shuffle_results.append(alg2_d)
 
@@ -131,13 +131,13 @@ def shuffle_run(n, driver_l1, passenger_l1, driver_l2, passenger_l2, profits, et
         'Passenger-optimal',
         GSmethods.checkblockingpairs(stable_match_l1_p_shuffle, driver_l2, passenger_l2_shuffle),
         GSmethods.sumprofit(stable_match_l1_p_shuffle, profits),
-        GSmethods.sumeta(stable_match_l1_p_shuffle, eta),
+        GSmethods.sumeta(stable_match_l1_p_shuffle, arrivaltime),
         GSmethods.minmaxweightmatching(profits, 'Max'),
         GSmethods.minmaxresult(stable_match_l1_p_shuffle, profits, 'Min'),
         GSmethods.minmaxresult(stable_match_l1_p_shuffle, profits, 'Max'),
-        GSmethods.minmaxweightmatching(eta, 'Min'),
-        GSmethods.minmaxresult(stable_match_l1_p_shuffle, eta, 'Min'),
-        GSmethods.minmaxresult(stable_match_l1_p_shuffle, eta, 'Max')
+        GSmethods.minmaxweightmatching(arrivaltime, 'Min'),
+        GSmethods.minmaxresult(stable_match_l1_p_shuffle, arrivaltime, 'Min'),
+        GSmethods.minmaxresult(stable_match_l1_p_shuffle, arrivaltime, 'Max')
     ]
     interm_shuffle_results.append(alg1_p)
 
@@ -146,13 +146,13 @@ def shuffle_run(n, driver_l1, passenger_l1, driver_l2, passenger_l2, profits, et
         'Passenger-optimal',
         GSmethods.checkblockingpairs(stable_match_l2_p_shuffle, driver_l1, passenger_l1_shuffle),
         GSmethods.sumprofit(stable_match_l2_p_shuffle, profits),
-        GSmethods.sumeta(stable_match_l2_p_shuffle, eta),
+        GSmethods.sumeta(stable_match_l2_p_shuffle, arrivaltime),
         GSmethods.minmaxweightmatching(profits, 'Max'),
         GSmethods.minmaxresult(stable_match_l2_p_shuffle, profits, 'Min'),
         GSmethods.minmaxresult(stable_match_l2_p_shuffle, profits, 'Max'),
-        GSmethods.minmaxweightmatching(eta, 'Min'),
-        GSmethods.minmaxresult(stable_match_l2_p_shuffle, eta, 'Min'),
-        GSmethods.minmaxresult(stable_match_l2_p_shuffle, eta, 'Max')
+        GSmethods.minmaxweightmatching(arrivaltime, 'Min'),
+        GSmethods.minmaxresult(stable_match_l2_p_shuffle, arrivaltime, 'Min'),
+        GSmethods.minmaxresult(stable_match_l2_p_shuffle, arrivaltime, 'Max')
     ]
     interm_shuffle_results.append(alg2_p)
 
