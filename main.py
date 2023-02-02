@@ -8,12 +8,13 @@ def main():
 
     results_fix = []
     results_shuffle = []
+    shuffle_time = []
 
     results_fix_waiting = []
     results_shuffle_waiting = []
 
-    runs = [5, 20, 40, 60, 80, 100]
-    shuffle = [100, 200, 500, 1000]
+    runs = [20, 40, 60, 80, 100]
+    shuffle = [25, 50, 100, 200]
     #iter_index = 5
 
     #change ETA 1-60
@@ -25,7 +26,7 @@ def main():
     for n in runs:
 
 
-        for k in range(100000):
+        for k in range(1000):
 
             #Generate features and preferences for this run
             profits = GSmethods.generateFeatures(n, "driver", 1)
@@ -44,37 +45,39 @@ def main():
             passenger_l2 = GSmethods.calculatePreferences(passenger_g_preferences, driver_gender)
 
             #Run Fix
-            inter_results_fix = data2.run(n, driver_l1, passenger_l1, driver_l2, passenger_l2, profits, eta)
+            inter_results_fix = data2.run(n, driver_l1, passenger_l1, driver_l2, passenger_l2, profits, eta, driver_gender)
             results_fix.append(inter_results_fix[0])
             results_fix.append(inter_results_fix[1])
-            results_fix.append(inter_results_fix[2])
-            results_fix.append(inter_results_fix[3])
+            # results_fix.append(inter_results_fix[2])
+            # results_fix.append(inter_results_fix[3])
             inter_results_fix.clear()
 
-            #Run Shuffle
-            inter_results_shuffle = data2.shuffle_run(n, driver_l1, passenger_l1, driver_l2, passenger_l2, profits, eta)
-            results_shuffle.append(inter_results_shuffle[0])
-            results_shuffle.append(inter_results_shuffle[1])
-            results_shuffle.append(inter_results_shuffle[2])
-            results_shuffle.append(inter_results_shuffle[3])
-            inter_results_shuffle.clear()
-
             #Run Fix Waiting Time
-            inter_results_fix_waiting = data2.run(n, driver_l1, passenger_l1_waiting_time, driver_l2, passenger_l2, profits, eta_waiting_time)
+            inter_results_fix_waiting = data2.run(n, driver_l1, passenger_l1_waiting_time, driver_l2, passenger_l2, profits, eta_waiting_time, driver_gender)
             results_fix_waiting.append(inter_results_fix_waiting[0])
             results_fix_waiting.append(inter_results_fix_waiting[1])
-            results_fix_waiting.append(inter_results_fix_waiting[2])
-            results_fix_waiting.append(inter_results_fix_waiting[3])
+            # results_fix_waiting.append(inter_results_fix_waiting[2])
+            # results_fix_waiting.append(inter_results_fix_waiting[3])
             inter_results_fix_waiting.clear()
 
-            #Run Shuffle Waiting Time
-            inter_results_shuffle_waiting = data2.shuffle_run(n, driver_l1, passenger_l1_waiting_time, driver_l2, passenger_l2, profits, eta_waiting_time)
-            results_shuffle_waiting.append(inter_results_shuffle_waiting[0])
-            results_shuffle_waiting.append(inter_results_shuffle_waiting[1])
-            results_shuffle_waiting.append(inter_results_shuffle_waiting[2])
-            results_shuffle_waiting.append(inter_results_shuffle_waiting[3])
-            inter_results_shuffle_waiting.clear()
+            for s in shuffle:
+                for ss in range(s):
+                    #Run Shuffle
+                    inter_results_shuffle = data2.shuffle_run(n, s, driver_l1, passenger_l1, driver_l2, passenger_l2, profits, eta, driver_gender, s)
+                    results_shuffle.append(inter_results_shuffle[0])
+                    results_shuffle.append(inter_results_shuffle[1])
+                    shuffle_time.append(inter_results_shuffle[2])
+                    shuffle_time.append(inter_results_shuffle[3])
+                    inter_results_shuffle.clear()
 
+                    #Run Shuffle Waiting Time
+                    inter_results_shuffle_waiting = data2.shuffle_run(n, s, driver_l1, passenger_l1_waiting_time, driver_l2, passenger_l2, profits, eta_waiting_time, driver_gender, s)
+                    results_shuffle_waiting.append(inter_results_shuffle_waiting[0])
+                    results_shuffle_waiting.append(inter_results_shuffle_waiting[1])
+                    shuffle_time.append(inter_results_shuffle_waiting[2])
+                    shuffle_time.append(inter_results_shuffle_waiting[3])
+                    inter_results_shuffle_waiting.clear()
+            print(k)
         print(n)
 
         df_results_fix = pd.DataFrame(results_fix, columns=[
@@ -98,6 +101,7 @@ def main():
         df_results_shuffle = pd.DataFrame(results_shuffle, columns=[
             'ALG',
             'Optimum',
+            'Shuffle',
             'Blocking Pairs',
             'Sum_Profit',
             'Sum_ETA',
@@ -136,6 +140,7 @@ def main():
         df_results_shuffle_waiting = pd.DataFrame(results_shuffle_waiting, columns=[
             'ALG',
             'Optimum',
+            'Shuffle',
             'Blocking Pairs',
             'Sum_Profit',
             'Sum_ETA',
@@ -150,6 +155,18 @@ def main():
         df_results_shuffle_waiting.to_csv(f'./results/Shuffle/data/data_shuffle_waiting_n{n}.csv')
         del df_results_shuffle_waiting
         results_shuffle_waiting.clear()
+
+        df_shuffle_time = pd.DataFrame(shuffle_time, columns=[
+            'Type',
+            'ALG',
+            'N=',
+            'Shuffle',
+            'Time'
+        ])
+
+        df_shuffle_time.to_csv(f'./results/Shuffle/data/shuffle_timen{n}.csv')
+        del df_shuffle_time
+        shuffle_time.clear()
 
 
 #Record run time

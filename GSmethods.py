@@ -133,26 +133,33 @@ def rearrange_order(preference_list, n):
     rearranged_dict = {k: preference_list[k] for k in new_order}
     return rearranged_dict
 
-def checkblockingpairs(matches: dict, driver_preferences: dict , passenger_preferences: dict):
+def checkblockingpairs(matches: dict, driver_preferences: dict , passenger_preferences: dict, feature):
     x = matches
     x_inv = {v: k for k, v in x.items()}
     y = driver_preferences
     z = passenger_preferences
+    z_val = feature
     blocking_pair_count = 0
     blocking_pair_list = []
 
-    for key, value in x.items():
-        match_preferences = y[key]
+    for key, value in x_inv.items():
+        match_preferences = z[key]
         match_preference_index = match_preferences.index(value)
 
         if match_preference_index != 0:
             for i in range(match_preference_index-1, -1, -1):
                 higher_preference = match_preferences[i]
-                higher_preference_pref = z[higher_preference]
+                higher_preference_pref = y[higher_preference]
                 key_preference_index = higher_preference_pref.index(key)
-                higher_preference_match = x_inv[higher_preference]
+                higher_preference_match = x[higher_preference]
                 higher_preference_match_ind = higher_preference_pref.index(higher_preference_match)
-                if key_preference_index < higher_preference_match_ind:
+                if isinstance(z_val[higher_preference], list):
+                    higher_pref_value = z_val[key][higher_preference]
+                    match_value = z_val[key][value]
+                else:
+                    higher_pref_value = z_val[higher_preference]
+                    match_value = z_val[value]
+                if key_preference_index < higher_preference_match_ind and higher_pref_value != match_value:
                     blocking_pair_count +=1
                     blocking_pair_list.append([key, higher_preference])
 
@@ -214,7 +221,7 @@ def minmaxresult(matches: dict, l1_features: dict, Min_Max: str):
 #     return sum_results
 
 def minmaxweightmatching(l1_features,Min_Max):
-    y = np.array(list(l1_features.values()))
+    y = np.array(list(l1_features.values()))^
 
     if Min_Max == 'Min':
         row_ind, col_ind = linear_sum_assignment(y)
