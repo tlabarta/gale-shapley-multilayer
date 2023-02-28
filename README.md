@@ -13,13 +13,16 @@ The graphic below shows the code architecture.
 Calls the benchmark and runtime procedures.
 
 **benchmark:**
-For first part of the experiment. Defines the parameter n for which benchmarks of n drivers and passengers shall be created using the methods from utilities.py. Finally matches the benchmarks using matching.py and calculates performance indicators with methods from utilities.py. Exports the results
+For first part of the experiment, investigating efficiency and stability of extended Gale-Shapley algorithm. Defines the parameter n for which benchmarks of n drivers and passengers shall be created using the methods from utilities.py. Finally matches the benchmarks using matching.py and calculates performance indicators with methods from utilities.py. Exports the results as .csv.
 
 **runtime:**
+For second part of the experiment, investigating runtime of extended Gale-Shapley for an increasing set of drivers and passengers.
 
 **matching:**
+Contains procedures for executing the matching, calling utility methods for calculating performance indicators and returning the results.
 
 **utilities:**
+Contains methods for creating ETA, profit and gender preferences. Also contains methods for matching, calculating blocking pairs and calculating other performance indicators.
 
 
 
