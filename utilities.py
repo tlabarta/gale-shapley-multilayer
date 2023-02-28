@@ -1,6 +1,5 @@
 import random
 import numpy as np
-import time
 import pandas as pd
 from scipy.optimize import linear_sum_assignment
 
@@ -30,7 +29,7 @@ def generateFeatures(n, party, layer):
         features[i] = randomlist
     return features
 
-def generatePreferences(n, party):
+def generatePreferences(n):
     gpreferences = {}
 
     for i in range(n):
@@ -205,23 +204,8 @@ def minmaxresult(matches: dict, l1_features: dict, Min_Max: str):
 
     return result
 
-#to be removed
-# def minmaxall(l1_features: dict, Min_Max: str):
-#     y = l1_features
-#     results = []
-#
-#     for key, value in y.items():
-#         if Min_Max == 'Min':
-#             results.append(min(value))
-#         elif Min_Max == 'Max':
-#             results.append(max(value))
-#
-#     sum_results = sum(results)
-#
-#     return sum_results
-
 def minmaxweightmatching(l1_features,Min_Max):
-    y = np.array(list(l1_features.values()))^
+    y = np.array(list(l1_features.values()))
 
     if Min_Max == 'Min':
         row_ind, col_ind = linear_sum_assignment(y)
