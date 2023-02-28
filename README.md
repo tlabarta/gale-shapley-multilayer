@@ -1,7 +1,38 @@
-# gale-shapley-multilayer
-Work in Progress: Working on an extension of Gale-Shapley algorithm. Goal is to add a second layer of preferences. In this case, adding the layer of gender preferences for f/m/d for passengers/drivers in addition to profit/ETA preferences.
+# Gale-Shapley Extension for two layers of preferences
 
-How to use this repository:
-Run main.py to reproduce the results from the report. Currently, it will return profits and ETA for layer 1, as well as genders and gender preferences of layer 2. Then it will run Gale-Shapley to find a stable match on layer 1 and use this match on layer 2 to check for blocking pairs. In case of blocking pairs, it will return the first blocking pair it finds and then terminate. You can increase or decrease the variable n at the beginnning of main.py to increase or decrease the generated drivers and passengers.
 
-NOTE: As the customers and drivers are generated randomly for each run of main.py, the numbers will differentiate.
+This respository contains an extension to the [Gale-Shapley algorithm](https://dl.acm.org/doi/abs/10.5555/68392). The extension was presented in the publication by **Martin Aleksandrov and Tobias Labarta: "Fighting Passenger Harassment During Taxi Rides"**. 
+
+The graphic below shows the code architecture. Required packages can be found in **requirements.txt**.
+
+
+![Architecture](https://user-images.githubusercontent.com/93525195/221872989-0fec4a7e-a9f1-4942-9644-92e2d89537fc.png)
+
+
+**main:**
+Calls the benchmark and runtime procedures.
+
+**benchmark:**
+For first part of the experiment, investigating efficiency and stability of extended Gale-Shapley algorithm. Defines the parameter n for which benchmarks of n drivers and passengers shall be created using the methods from utilities.py. Finally matches the benchmarks using matching.py and calculates performance indicators with methods from utilities.py. Exports the results as .csv. Below is more documentation regarding the benchmark experiment.
+
+**runtime:**
+For second part of the experiment, investigating runtime of extended Gale-Shapley for an increasing set of drivers and passengers.
+
+**matching:**
+Contains procedures for executing the matching, calling utility methods for calculating performance indicators and returning the results.
+
+**utilities:**
+Contains methods for creating ETA, profit and gender preferences. Also contains methods for matching, calculating blocking pairs and calculating other performance indicators.
+
+
+
+### Benchmark experiment
+
+![Benchmark Experiment](https://user-images.githubusercontent.com/93525195/221889145-6d5917d0-61ed-49ab-b8c4-de54579fd110.png)
+
+### Columns in the generated data files
+![Results](https://user-images.githubusercontent.com/93525195/221901656-9f76a2d9-39d5-428e-b368-4c93f1497a0b.png)
+
+
+
+
