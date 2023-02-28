@@ -1,9 +1,9 @@
 # Gale-Shapley Extension for two layers of preferences
 
 
-This respository contains an extension to the [Gale-Shapley algorithm](https://dl.acm.org/doi/abs/10.5555/68392). The extension first presented in the publication by Martin Aleksandrov and Tobias Labarta: "Fighting Passenger Harassment During Taxi Rides". 
+This respository contains an extension to the [Gale-Shapley algorithm](https://dl.acm.org/doi/abs/10.5555/68392). The extension was presented in the publication by **Martin Aleksandrov and Tobias Labarta: "Fighting Passenger Harassment During Taxi Rides"**. 
 
-The graphic below shows the code architecture.
+The graphic below shows the code architecture. Required packages can be found in **requirements.txt**.
 
 
 ![Architecture](https://user-images.githubusercontent.com/93525195/221872989-0fec4a7e-a9f1-4942-9644-92e2d89537fc.png)
