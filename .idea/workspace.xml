@@ -5,96 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6334ea84-5fdc-47bb-a042-2242cb19fcfd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/runtime.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Analysis 2.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Analysis.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GSmethods.py" beforeDir="false" afterPath="$PROJECT_DIR$/utilities.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data2.py" beforeDir="false" afterPath="$PROJECT_DIR$/matching.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/Fix/barchart_1dimension/barchart_1dimension_Blocking Pairs_n100_iter100000.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/Fix/barchart_1dimension/barchart_1dimension_Blocking Pairs_n20_iter100000.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/Fix/barchart_1dimension/barchart_1dimension_Blocking Pairs_n40_iter100000.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/Fix/barchart_1dimension/barchart_1dimension_Blocking Pairs_n60_iter100000.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/Fix/barchart_1dimension/barchart_1dimension_Blocking Pairs_n80_iter100000.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/Fix/barchart_1dimension/barchart_1dimension_Sum_ETA_n100_iter100000.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/Fix/barchart_1dimension/barchart_1dimension_Sum_ETA_n20_iter100000.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/Fix/barchart_1dimension/barchart_1dimension_Sum_ETA_n40_iter100000.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/Fix/barchart_1dimension/barchart_1dimension_Sum_ETA_n60_iter100000.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/Fix/barchart_1dimension/barchart_1dimension_Sum_ETA_n80_iter100000.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/Fix/barchart_1dimension/barchart_1dimension_Sum_Profit_n100_iter100000.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/Fix/barchart_1dimension/barchart_1dimension_Sum_Profit_n20_iter100000.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/Fix/barchart_1dimension/barchart_1dimension_Sum_Profit_n40_iter100000.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/Fix/barchart_1dimension/barchart_1dimension_Sum_Profit_n60_iter100000.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/Fix/barchart_1dimension/barchart_1dimension_Sum_Profit_n80_iter100000.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/Fix/boxplot/boxplot_Blocking Pairs_n100_iter100000.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/Fix/boxplot/boxplot_Blocking Pairs_n20_iter100000.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/Fix/boxplot/boxplot_Blocking Pairs_n40_iter100000.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/Fix/boxplot/boxplot_Blocking Pairs_n60_iter100000.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/Fix/boxplot/boxplot_Blocking Pairs_n80_iter100000.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/Fix/boxplot/boxplot_Sum_ETA_n100_iter100000.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/Fix/boxplot/boxplot_Sum_ETA_n20_iter100000.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/Fix/boxplot/boxplot_Sum_ETA_n40_iter100000.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/Fix/boxplot/boxplot_Sum_ETA_n60_iter100000.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/Fix/boxplot/boxplot_Sum_ETA_n80_iter100000.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/Fix/boxplot/boxplot_Sum_Profit_n100_iter100000.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/Fix/boxplot/boxplot_Sum_Profit_n20_iter100000.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/Fix/boxplot/boxplot_Sum_Profit_n40_iter100000.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/Fix/boxplot/boxplot_Sum_Profit_n60_iter100000.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/Fix/boxplot/boxplot_Sum_Profit_n80_iter100000.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/Fix/corr_matrix/corr_matrix_n20_iter100000.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/Fix/corr_matrix/corr_matrix_n20_iter50.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/Fix/corr_matrix/corr_matrix_n5_iter5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/Shuffle/barchart_1dimension/barchart_1dimension_Blocking Pairs_n100_iter100000.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/Shuffle/barchart_1dimension/barchart_1dimension_Blocking Pairs_n20_iter100000.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/Shuffle/barchart_1dimension/barchart_1dimension_Blocking Pairs_n40_iter100000.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/Shuffle/barchart_1dimension/barchart_1dimension_Blocking Pairs_n60_iter100000.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/Shuffle/barchart_1dimension/barchart_1dimension_Blocking Pairs_n80_iter100000.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/Shuffle/barchart_1dimension/barchart_1dimension_Sum_ETA_n100_iter100000.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/Shuffle/barchart_1dimension/barchart_1dimension_Sum_ETA_n20_iter100000.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/Shuffle/barchart_1dimension/barchart_1dimension_Sum_ETA_n40_iter100000.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/Shuffle/barchart_1dimension/barchart_1dimension_Sum_ETA_n60_iter100000.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/Shuffle/barchart_1dimension/barchart_1dimension_Sum_ETA_n80_iter100000.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/Shuffle/barchart_1dimension/barchart_1dimension_Sum_Profit_n100_iter100000.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/Shuffle/barchart_1dimension/barchart_1dimension_Sum_Profit_n20_iter100000.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/Shuffle/barchart_1dimension/barchart_1dimension_Sum_Profit_n40_iter100000.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/Shuffle/barchart_1dimension/barchart_1dimension_Sum_Profit_n60_iter100000.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/Shuffle/barchart_1dimension/barchart_1dimension_Sum_Profit_n80_iter100000.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/Shuffle/boxplot/boxplot_Blocking Pairs_n100_iter100000.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/Shuffle/boxplot/boxplot_Blocking Pairs_n20_iter100000.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/Shuffle/boxplot/boxplot_Blocking Pairs_n40_iter100000.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/Shuffle/boxplot/boxplot_Blocking Pairs_n60_iter100000.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/Shuffle/boxplot/boxplot_Blocking Pairs_n80_iter100000.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/Shuffle/boxplot/boxplot_Sum_ETA_n100_iter100000.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/Shuffle/boxplot/boxplot_Sum_ETA_n20_iter100000.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/Shuffle/boxplot/boxplot_Sum_ETA_n40_iter100000.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/Shuffle/boxplot/boxplot_Sum_ETA_n60_iter100000.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/Shuffle/boxplot/boxplot_Sum_ETA_n80_iter100000.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/Shuffle/boxplot/boxplot_Sum_Profit_n100_iter100000.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/Shuffle/boxplot/boxplot_Sum_Profit_n20_iter100000.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/Shuffle/boxplot/boxplot_Sum_Profit_n40_iter100000.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/Shuffle/boxplot/boxplot_Sum_Profit_n60_iter100000.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/Shuffle/boxplot/boxplot_Sum_Profit_n80_iter100000.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/Shuffle/corr_matrix/corr_matrix_n20_iter100000.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/Shuffle/corr_matrix/corr_matrix_n40_iter100000.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/Shuffle/corr_matrix/corr_matrix_n60_iter100000.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/Shuffle/corr_matrix/corr_matrix_n80_iter100000.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/blocking_pairs_utility.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/run-time-alg-scatter.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/run_time_all_scatter.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/run_time_combined-cropped.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/run_time_combined.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/run_time_original.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/run_time_plot.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/run_time_plot.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/run_time_pref_scatter.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/run_time_preferences.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/benchmark.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/to be removed after checking/Gale-Shapley.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/to be removed after checking/GaleShapley.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/to be removed after checking/Prototyping.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/visual.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utilities.py" beforeDir="false" afterPath="$PROJECT_DIR$/utilities.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -218,7 +130,7 @@
       <workItem from="1674139017701" duration="7730000" />
       <workItem from="1674227218073" duration="35749000" />
       <workItem from="1675236398839" duration="5831000" />
-      <workItem from="1677587806049" duration="6302000" />
+      <workItem from="1677587806049" duration="6779000" />
     </task>
     <servers />
   </component>

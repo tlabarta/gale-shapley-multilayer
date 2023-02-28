@@ -92,6 +92,8 @@ def calculateWaitingTime(eta, waiting_time):
     return result
 
 def stableMatching(n, driverPreferences, passengerPreferences):
+    #adapted from: https://github.com/Abdulmalik02/githubPython/blob/3c49df9e345a75cda4f2f4fe6bf09b967ad16b01/stableMarriageProblem/StableMariages.py
+
     unmatched = list(driverPreferences.keys())
     driverID = {f"driver{key}": val for key, val in driverPreferences.items()}
     driverID = list(driverID.keys())
