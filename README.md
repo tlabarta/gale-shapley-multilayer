@@ -29,7 +29,7 @@ Contains methods for creating ETA, profit and gender preferences. Also contains 
 
 ![Benchmark Experiment](https://user-images.githubusercontent.com/93525195/221889145-6d5917d0-61ed-49ab-b8c4-de54579fd110.png)
 
-![Results](https://user-images.githubusercontent.com/93525195/221901099-d6dd41a9-7734-4286-98b4-de06694c225b.png)
+![Results](https://user-images.githubusercontent.com/93525195/221901384-635c54ab-27e0-48f2-845b-4f827aa08a79.png)
 
 
 
