@@ -24,8 +24,8 @@ Contains procedures for executing the matching, calling utility methods for calc
 **utilities:**
 Contains methods for creating ETA, profit and gender preferences. Also contains methods for matching, calculating blocking pairs and calculating other performance indicators.
 
+![Benchmark Experiment](https://user-images.githubusercontent.com/93525195/221889145-6d5917d0-61ed-49ab-b8c4-de54579fd110.png)
 
-![Benchmark Experiment](https://user-images.githubusercontent.com/93525195/221888839-7d267d66-4a0e-401d-991d-ddcba0943176.png)
 
 
 
