@@ -24,6 +24,8 @@ Contains procedures for executing the matching, calling utility methods for calc
 **utilities:**
 Contains methods for creating ETA, profit and gender preferences. Also contains methods for matching, calculating blocking pairs and calculating other performance indicators.
 
+**Analysis.ipynb:**
+Jupyter Notebook that analyzes the benchmark and run time results and creates plots based on the data.
 
 
 ### Benchmark experiment
