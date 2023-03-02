@@ -3,7 +3,7 @@
 
 This respository contains an extension to the [Gale-Shapley algorithm](https://dl.acm.org/doi/abs/10.5555/68392). The extension was presented in the publication by **Martin Aleksandrov and Tobias Labarta: "Fighting Passenger Harassment During Taxi Rides"**. 
 
-The graphic below shows the code architecture. Required packages can be found in **requirements.txt**.
+The graphic below shows the code architecture. Required packages can be found in **_requirements.txt_**.
 
 
 ![Architecture](https://user-images.githubusercontent.com/93525195/222461753-5de9b294-f890-4ea9-954c-34e61d3158ac.png)
