@@ -6,7 +6,7 @@ This respository contains an extension to the [Gale-Shapley algorithm](https://d
 The graphic below shows the code architecture. Required packages can be found in **requirements.txt**.
 
 
-![Architecture](https://user-images.githubusercontent.com/93525195/221872989-0fec4a7e-a9f1-4942-9644-92e2d89537fc.png)
+![Architecture](https://user-images.githubusercontent.com/93525195/222461753-5de9b294-f890-4ea9-954c-34e61d3158ac.png)
 
 
 **main:**
