@@ -5,38 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6334ea84-5fdc-47bb-a042-2242cb19fcfd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Analysis.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Performance.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scalability.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/merged.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/Fix/data/data_fix_n100.csv" beforeDir="false" afterPath="$PROJECT_DIR$/results/Fix/data/data_fix_n100.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/Fix/data/data_fix_n20.csv" beforeDir="false" afterPath="$PROJECT_DIR$/results/Fix/data/data_fix_n20.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/Fix/data/data_fix_n40.csv" beforeDir="false" afterPath="$PROJECT_DIR$/results/Fix/data/data_fix_n40.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/Fix/data/data_fix_n60.csv" beforeDir="false" afterPath="$PROJECT_DIR$/results/Fix/data/data_fix_n60.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/Fix/data/data_fix_n80.csv" beforeDir="false" afterPath="$PROJECT_DIR$/results/Fix/data/data_fix_n80.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/Fix/data/data_fix_waiting_n100.csv" beforeDir="false" afterPath="$PROJECT_DIR$/results/Fix/data/data_fix_waiting_n100.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/Fix/data/data_fix_waiting_n20.csv" beforeDir="false" afterPath="$PROJECT_DIR$/results/Fix/data/data_fix_waiting_n20.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/Fix/data/data_fix_waiting_n40.csv" beforeDir="false" afterPath="$PROJECT_DIR$/results/Fix/data/data_fix_waiting_n40.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/Fix/data/data_fix_waiting_n60.csv" beforeDir="false" afterPath="$PROJECT_DIR$/results/Fix/data/data_fix_waiting_n60.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/Fix/data/data_fix_waiting_n80.csv" beforeDir="false" afterPath="$PROJECT_DIR$/results/Fix/data/data_fix_waiting_n80.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/Shuffle/data/data_shuffle_n100.csv" beforeDir="false" afterPath="$PROJECT_DIR$/results/Shuffle/data/data_shuffle_n100.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/Shuffle/data/data_shuffle_n20.csv" beforeDir="false" afterPath="$PROJECT_DIR$/results/Shuffle/data/data_shuffle_n20.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/Shuffle/data/data_shuffle_n40.csv" beforeDir="false" afterPath="$PROJECT_DIR$/results/Shuffle/data/data_shuffle_n40.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/Shuffle/data/data_shuffle_n60.csv" beforeDir="false" afterPath="$PROJECT_DIR$/results/Shuffle/data/data_shuffle_n60.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/Shuffle/data/data_shuffle_n80.csv" beforeDir="false" afterPath="$PROJECT_DIR$/results/Shuffle/data/data_shuffle_n80.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/Shuffle/data/data_shuffle_waiting_n100.csv" beforeDir="false" afterPath="$PROJECT_DIR$/results/Shuffle/data/data_shuffle_waiting_n100.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/Shuffle/data/data_shuffle_waiting_n20.csv" beforeDir="false" afterPath="$PROJECT_DIR$/results/Shuffle/data/data_shuffle_waiting_n20.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/Shuffle/data/data_shuffle_waiting_n40.csv" beforeDir="false" afterPath="$PROJECT_DIR$/results/Shuffle/data/data_shuffle_waiting_n40.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/Shuffle/data/data_shuffle_waiting_n60.csv" beforeDir="false" afterPath="$PROJECT_DIR$/results/Shuffle/data/data_shuffle_waiting_n60.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/Shuffle/data/data_shuffle_waiting_n80.csv" beforeDir="false" afterPath="$PROJECT_DIR$/results/Shuffle/data/data_shuffle_waiting_n80.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/blocking_pairs.png" beforeDir="false" afterPath="$PROJECT_DIR$/results/blocking_pairs.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/eta.png" beforeDir="false" afterPath="$PROJECT_DIR$/results/eta.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/summary_fix.csv" beforeDir="false" afterPath="$PROJECT_DIR$/results/summary_fix.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/summary_fix_utility.csv" beforeDir="false" afterPath="$PROJECT_DIR$/results/summary_fix_utility.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/summary_shuffle.csv" beforeDir="false" afterPath="$PROJECT_DIR$/results/summary_shuffle.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/summary_shuffle_utility.csv" beforeDir="false" afterPath="$PROJECT_DIR$/results/summary_shuffle_utility.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Analysis.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Analysis.ipynb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,6 +68,9 @@
       <module name="gale-shapley-multilayer" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="$USER_HOME$/miniforge3/envs/pm/bin/python" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="false" />
@@ -157,7 +130,8 @@
       <workItem from="1674139017701" duration="7730000" />
       <workItem from="1674227218073" duration="35749000" />
       <workItem from="1675236398839" duration="5831000" />
-      <workItem from="1677587806049" duration="11827000" />
+      <workItem from="1677587806049" duration="13025000" />
+      <workItem from="1678204167983" duration="503000" />
     </task>
     <servers />
   </component>
