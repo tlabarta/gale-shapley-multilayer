@@ -1,12 +1,12 @@
 # Gale-Shapley Extension for two layers of preferences
 
 
-This respository contains an extension to the [Gale-Shapley algorithm](https://dl.acm.org/doi/abs/10.5555/68392). The extension was presented in the publication by **Martin Aleksandrov and Tobias Labarta: "Fighting Passenger Harassment During Taxi Rides"**. 
+This respository contains an extension to the [Gale-Shapley algorithm](https://dl.acm.org/doi/abs/10.5555/68392). The extension was presented in the publication by **Martin Aleksandrov and Tobias Labarta: "_Fighting Passenger Harassment During Taxi Rides_"**. 
 
-The graphic below shows the code architecture. Required packages can be found in **requirements.txt**.
+The graphic below shows the code architecture. Required packages can be found in **_requirements.txt_**.
 
 
-![Architecture](https://user-images.githubusercontent.com/93525195/221872989-0fec4a7e-a9f1-4942-9644-92e2d89537fc.png)
+![Architecture](https://user-images.githubusercontent.com/93525195/222461753-5de9b294-f890-4ea9-954c-34e61d3158ac.png)
 
 
 **main:**
@@ -24,6 +24,8 @@ Contains procedures for executing the matching, calling utility methods for calc
 **utilities:**
 Contains methods for creating ETA, profit and gender preferences. Also contains methods for matching, calculating blocking pairs and calculating other performance indicators.
 
+**Analysis.ipynb:**
+Jupyter Notebook that analyzes the benchmark and run time results and creates plots based on the data.
 
 
 ### Benchmark experiment
