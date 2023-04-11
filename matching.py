@@ -174,23 +174,46 @@ def shuffle_run(n, shuffle, driver_l1, passenger_l1, driver_l2, passenger_l2, pr
 
     return interm_shuffle_results
 
-def runtime_run(n, driver_l1, passenger_l1, driver_l2, passenger_l2, profits, arrival_time, d_gender):
+def runtime_run(alg, n, driver_l1, passenger_l1, driver_l2, passenger_l2, profits, arrival_time, d_gender):
     interm_results = []
-    stable_match_l1_d = utilities.stableMatching(n, driver_l1, passenger_l1)
+    algo = alg
 
-    alg1_d = [
-        'ALG1',
-        'Passenger-optimal',
-        utilities.checkblockingpairs(stable_match_l1_d, driver_l2, passenger_l2, d_gender),
-        utilities.sumprofit(stable_match_l1_d, profits),
-        utilities.sumeta(stable_match_l1_d, arrival_time),
-        utilities.minmaxweightmatching(profits, 'Max'),
-        utilities.minmaxresult(stable_match_l1_d, profits, 'Min'),
-        utilities.minmaxresult(stable_match_l1_d, profits, 'Max'),
-        utilities.minmaxweightmatching(arrival_time, 'Min'),
-        utilities.minmaxresult(stable_match_l1_d, arrival_time, 'Min'),
-        utilities.minmaxresult(stable_match_l1_d, arrival_time, 'Max')
-    ]
-    interm_results.append(alg1_d)
+    if algo == 1:
+        stable_match_l1_p = utilities.stableMatching(n, passenger_l1, driver_l1)
+        stable_match_l1_p = {y: x for x, y in stable_match_l1_p.items()}
+
+        alg1_p = [
+            'ALG1',
+            'Passenger-optimal',
+            utilities.checkblockingpairs(stable_match_l1_p, driver_l2, passenger_l2, d_gender),
+            utilities.sumprofit(stable_match_l1_p, profits),
+            utilities.sumeta(stable_match_l1_p, arrival_time),
+            utilities.minmaxweightmatching(profits, 'Max'),
+            utilities.minmaxresult(stable_match_l1_p, profits, 'Min'),
+            utilities.minmaxresult(stable_match_l1_p, profits, 'Max'),
+            utilities.minmaxweightmatching(arrival_time, 'Min'),
+            utilities.minmaxresult(stable_match_l1_p, arrival_time, 'Min'),
+            utilities.minmaxresult(stable_match_l1_p, arrival_time, 'Max')
+        ]
+        interm_results.append(alg1_p)
+
+    elif algo == 2:
+        stable_match_l2_p = utilities.stableMatching(n, passenger_l2, driver_l2)
+        stable_match_l2_p = {y: x for x, y in stable_match_l2_p.items()}
+
+        alg2_p = [
+            'ALG2',
+            'Passenger-optimal',
+            utilities.checkblockingpairs(stable_match_l2_p, driver_l1, passenger_l1, arrival_time),
+            utilities.sumprofit(stable_match_l2_p, profits),
+            utilities.sumeta(stable_match_l2_p, arrival_time),
+            utilities.minmaxweightmatching(profits, 'Max'),
+            utilities.minmaxresult(stable_match_l2_p, profits, 'Min'),
+            utilities.minmaxresult(stable_match_l2_p, profits, 'Max'),
+            utilities.minmaxweightmatching(arrival_time, 'Min'),
+            utilities.minmaxresult(stable_match_l2_p, arrival_time, 'Min'),
+            utilities.minmaxresult(stable_match_l2_p, arrival_time, 'Max')
+        ]
+        interm_results.append(alg2_p)
 
     return interm_results

@@ -4,7 +4,7 @@ import time
 import utilities
 
 
-def runtime():
+def runtime_both_exec():
     runtime_all = []
     runtime_test = [100, 200, 400, 600, 800, 1000, 2000, 4000, 6000, 8000, 10000]
     for j in runtime_test:
@@ -24,13 +24,19 @@ def runtime():
 
         preference_time = time.process_time() - start_time_all
 
-        run = matching.runtime_run(1, j, driver_l1, passenger_l1, driver_l2, passenger_l2, profits, eta)
+        alg1start = time.process_time()
+        alg1run = matching.runtime_run(1, j, driver_l1, passenger_l1, driver_l2, passenger_l2, profits, eta)
+        alg1 = time.process_time() - alg1start
 
-        inter_results = [j, preference_time, time.process_time() - start_time_all]
+        alg2start = time.process_time()
+        alg2run = matching.runtime_run(2, j, driver_l1, passenger_l1, driver_l2, passenger_l2, profits, eta)
+        alg2 = time.process_time() - alg2start
+
+        inter_results = [j, preference_time, alg1, alg2]
         runtime_all.append(inter_results)
         print(j)
 
-    df_runtime = pd.DataFrame(runtime_all, columns=['n=', 'Run Time Pref in s', 'Run Time All in s'])
+    df_runtime = pd.DataFrame(runtime_all, columns=['n=', 'Run Time Pref in s', 'Run Time Alg1 in s', 'Run Time Alg2 in s'])
 
-    df_runtime.to_csv(f'./results/run_time.csv')
+    df_runtime.to_csv(f'./results/run_time_both.csv')
     del df_runtime
