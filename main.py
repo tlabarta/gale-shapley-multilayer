@@ -6,10 +6,10 @@ import runtime_both
 
 def main():
     # Enable for single run time test
-    # runtime()
+    # runtime.runtime()
 
     # Enable for second run time test with both extensions
-    runtime_both_exec()
+    runtime_both.runtime_both_exec()
 
     #benchmark.create()
 

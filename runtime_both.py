@@ -25,11 +25,11 @@ def runtime_both_exec():
         preference_time = time.process_time() - start_time_all
 
         alg1start = time.process_time()
-        alg1run = matching.runtime_run(1, j, driver_l1, passenger_l1, driver_l2, passenger_l2, profits, eta)
+        alg1run = matching.runtime_run(1, j, driver_l1, passenger_l1, driver_l2, passenger_l2, profits, eta, driver_gender)
         alg1 = time.process_time() - alg1start
 
         alg2start = time.process_time()
-        alg2run = matching.runtime_run(2, j, driver_l1, passenger_l1, driver_l2, passenger_l2, profits, eta)
+        alg2run = matching.runtime_run(2, j, driver_l1, passenger_l1, driver_l2, passenger_l2, profits, eta, driver_gender)
         alg2 = time.process_time() - alg2start
 
         inter_results = [j, preference_time, alg1, alg2]
