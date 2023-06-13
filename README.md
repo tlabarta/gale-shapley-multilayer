@@ -1,7 +1,8 @@
 # Gale-Shapley Extension for two layers of preferences
 
 
-This respository contains an extension to the [Gale-Shapley algorithm](https://dl.acm.org/doi/abs/10.5555/68392). The extension was presented in the publication by **Martin Aleksandrov and Tobias Labarta: "_Safety, Stability, and Efficiency of Taxi Rides_"**. 
+This respository contains an extension to the [Gale-Shapley algorithm](https://dl.acm.org/doi/abs/10.5555/68392). The extension was presented in the paper **"_Safety, Stability, and Efficiency of Taxi Rides_"** authored by Martin Aleksandrov and Tobias Labarta, and accepted for publication at the 22nd EPIA Conference on Artificial Intelligence, 5-8 September 2023, Horta, Portugal.
+ 
 
 The graphic below shows the code architecture. Required packages can be found in **_requirements.txt_**.
 
